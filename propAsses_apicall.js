@@ -6,7 +6,7 @@ const resourceIDMap = {
 
 function apiCall(resourceID, callBack) {
   let options = {
-    url: `https://data.calgary.ca/resource/${resourceIDMap[resourceID]}.json&$Limit=50000`,
+    url: `https://data.calgary.ca/resource/${resourceIDMap[resourceID]}.json?$Limit=50000`,
     headers: {
       'User-Agent': 'request',
       'X-App-Token': 'TuumEdQ9KIehmtGnn2QjJoes7'
