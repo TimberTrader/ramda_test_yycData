@@ -1,4 +1,5 @@
 const request = require('request');
+const fs = require('fs-extra');
 
 const resourceIDMap = {
   prop_assess_val: '6zp6-pxei'
@@ -16,8 +17,12 @@ function apiCall(resourceID, callBack) {
     console.log('error:', error);
     console.log('statusCode:', response && response.statusCode);
     let dataObj = JSON.parse(body);
-    console.log(dataObj);
-    console.log(dataObj.length)
+    console.log(dataObj.length);
+    fs.writeJson('./test.json', {dataObj}, err => {
+      if (err) return console.error(err)
+    
+      console.log('success!')
+    })
   });
 }
 
